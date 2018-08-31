@@ -29,7 +29,7 @@
 
   <body class="{% block body_class %}body-home{% endblock %}">
     <header>
-      <nav class="top-nav" id="top-nav">
+      <nav class="top-nav" id="top-nav" style="background-color: #57838d">
         <div class="nav-wrapper">
           <div class="right">
             <ul id="user-action" class="dropdown-content">
@@ -70,7 +70,7 @@
             </li>
             <li>
               <a href="{% url 'dashboard:index' %}" class="logo">
-                <svg data-src="{% static "dashboard/images/logo.svg" %}" height="38px" width="176px" />
+                <img src="{% static "dashboard/images/logo.png" %}" height="58px" />
               </a>
             </li>
             <li class="search">
@@ -239,7 +239,7 @@
         </div>
       </nav>
     </header>
-    <div class="subheader top-nav">
+    <div class="subheader top-nav" style="background-color: #000">
       <div class="nav-wrapper container">
         {% block breadcrumbs %}
           <ul class="breadcrumbs">
