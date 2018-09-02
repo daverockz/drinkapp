@@ -3,6 +3,6 @@
 </mj-raw>
 <mj-section>
   <mj-column>
-    <mj-image src="{{ protocol}}://{{ domain }}{% static 'images/logo-document.svg' %}" height="38px" width="176px"/>
+    <mj-image src="{{ protocol}}://{{ domain }}{% static 'images/logo.png' %}" height="80px"/>
   </mj-column>
 </mj-section>
