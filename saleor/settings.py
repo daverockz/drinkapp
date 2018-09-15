@@ -338,7 +338,6 @@ PAYMENT_HOST = get_host
 PAYMENT_MODEL = 'order.Payment'
 
 PAYMENT_VARIANTS = {
-    'default': ('payments.dummy.DummyProvider', {}),
     'paypal': ('payments.paypal.PaypalProvider', {
         'client_id': 'linkempireteam_api1.gmail.com',
         'secret': 'QMCSDAUDM5ZBDC6G',
@@ -353,7 +352,7 @@ if not CACHES['default']['BACKEND'].endswith('LocMemCache'):
     SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
 CHECKOUT_PAYMENT_CHOICES = [
-    ('paypal')]
+    ('paypal', 'Pay with Card')]
 
 MESSAGE_TAGS = {
     messages.ERROR: 'danger'}
