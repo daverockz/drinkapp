@@ -340,10 +340,10 @@ PAYMENT_MODEL = 'order.Payment'
 PAYMENT_VARIANTS = {
     'default': ('payments.dummy.DummyProvider', {}),
     'paypal': ('payments.paypal.PaypalProvider', {
-        'client_id': 'user@example.com',
-        'secret': 'iseedeadpeople',
-        'endpoint': 'https://api.sandbox.paypal.com',
-        'capture': False})}
+        'client_id': 'linkempireteam_api1.gmail.com',
+        'secret': 'QMCSDAUDM5ZBDC6G',
+        'endpoint': 'https://api.paypal.com',
+        'capture': True})}
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 
