@@ -311,7 +311,7 @@ DEFAULT_CURRENCY = os.environ.get('DEFAULT_CURRENCY', 'GHS')
 DEFAULT_DECIMAL_PLACES = get_currency_fraction(DEFAULT_CURRENCY)
 AVAILABLE_CURRENCIES = [DEFAULT_CURRENCY]
 COUNTRIES_OVERRIDE = {
-    'EU': pgettext_lazy(
+    'GH': pgettext_lazy(
         'Name of political and economical union of european countries',
         'European Union')}
 
@@ -338,11 +338,7 @@ PAYMENT_HOST = get_host
 PAYMENT_MODEL = 'order.Payment'
 
 PAYMENT_VARIANTS = {
-    'paypal': ('payments.paypal.PaypalProvider', {
-        'client_id': 'linkempireteam_api1.gmail.com',
-        'secret': 'QMCSDAUDM5ZBDC6G',
-        'endpoint': 'https://api.paypal.com',
-        'capture': True})}
+    'default': ('payments.dummy.DummyProvider', {})}
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 
@@ -352,7 +348,7 @@ if not CACHES['default']['BACKEND'].endswith('LocMemCache'):
     SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
 CHECKOUT_PAYMENT_CHOICES = [
-    ('paypal', 'Pay with Card')]
+    ('default', 'Dummy provider')]
 
 MESSAGE_TAGS = {
     messages.ERROR: 'danger'}
