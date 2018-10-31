@@ -338,7 +338,9 @@ PAYMENT_HOST = get_host
 PAYMENT_MODEL = 'order.Payment'
 
 PAYMENT_VARIANTS = {
-    'default': ('payments.dummy.DummyProvider', {})}
+    'paypal': ('payments.paypal.PaypalCardProvider', {
+        'client_id': 'Abd_WLcyuwaqdNBwctRKg_pl82cEu_DpHhlqf2EiFzwYEMo_R3u4iQoBDymOoMPXYONewBDnqWta2nDt',
+        'secret': 'ECibzHTnXdWUB_PZlpJeBPug1jhS0rpqVlXwN08peIGSfT5xWEqpyplDKwTD0fGQRd7hjAL9NcgTAtJf'})}
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 
@@ -348,7 +350,7 @@ if not CACHES['default']['BACKEND'].endswith('LocMemCache'):
     SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
 CHECKOUT_PAYMENT_CHOICES = [
-    ('default', 'Dummy provider')]
+    ('paypal', 'Pay with your bank card')]
 
 MESSAGE_TAGS = {
     messages.ERROR: 'danger'}
